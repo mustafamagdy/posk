@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Geeky.POSK.Server.Dashboard.Views.SessionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cnv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             xmlns:local="clr-namespace:Geeky.POSK.Server.Dashboard.Views"
+             xmlns:dto="clr-namespace:Geeky.POSK.DataContracts;assembly=Geeky.POSK.DataContracts" 
+             mc:Ignorable="d" d:DesignWidth="300" MinWidth="350">
+  <UserControl.Resources>
+    <cnv:ImageConverter x:Key="CImage"/>
+  </UserControl.Resources>
+
+  <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="30*"/>
+      <ColumnDefinition Width="70*"/>
+    </Grid.ColumnDefinitions>
+    <Label Grid.Row="0" Grid.Column="0" Content="Terminal Code:"/>
+    <TextBlock Text="{Binding Dto.TerminalCode}" Grid.Column="1" Grid.Row="0"/>
+    <Label Grid.Row="1" Grid.Column="0" Content="Start Time:"/>
+    <TextBlock Text="{Binding Dto.StartTime}" Grid.Column="1" Grid.Row="1"/>
+    <Label Grid.Row="2" Grid.Column="0" Content="End Time:"/>
+    <TextBlock Text="{Binding Dto.EndTime}" Grid.Column="1" Grid.Row="2"/>
+    <Label Grid.Row="3" Grid.Column="0" Content="Requested Value:"/>
+    <TextBlock Text="{Binding Dto.TotalValue}" Grid.Column="1" Grid.Row="3"/>
+    <Label Grid.Row="4" Grid.Column="0" Content="Paid Value:"/>
+    <TextBlock Text="{Binding Dto.PaidValue}" Grid.Column="1" Grid.Row="4"/>
+
+    <DataGrid ItemsSource="{Binding Dto.Payments}" IsReadOnly="True" AutoGenerateColumns="False" CanUserAddRows="False" 
+              Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Grid.Row="5" VerticalAlignment="Stretch" >
+      <DataGrid.Columns>
+        <DataGridTextColumn Binding="{Binding Amount}" Header="Amount"/>
+      </DataGrid.Columns>
+    </DataGrid>
+
+  </Grid>
+
+</UserControl>

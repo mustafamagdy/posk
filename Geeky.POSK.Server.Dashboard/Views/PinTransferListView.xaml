@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Geeky.POSK.Server.Dashboard.Views.PinTransferListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cnv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             xmlns:local="clr-namespace:Geeky.POSK.Server.Dashboard.Views"
+             xmlns:conv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             xmlns:localConv="clr-namespace:Geeky.POSK.Server.Dashboard.Converters"
+             xmlns:dto="clr-namespace:Geeky.POSK.DataContracts;assembly=Geeky.POSK.DataContracts" 
+             mc:Ignorable="d" d:DesignWidth="300" MinWidth="350">
+  <UserControl.Resources>
+    <localConv:TransferTrxStatusToStringConverter x:Key="CTrxStatus" Hold="Hold" Completed="Completed" />
+  </UserControl.Resources>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="10"/>
+      <ColumnDefinition Width="261*"/>
+      <ColumnDefinition Width="10"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="10"/>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="119*"/>
+      <RowDefinition Height="10"/>
+    </Grid.RowDefinitions>
+    <DataGrid ItemsSource="{Binding Data}" IsReadOnly="True" AutoGenerateColumns="False" 
+              CanUserAddRows="False" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="2" 
+              VerticalAlignment="Stretch">
+      <DataGrid.Columns>
+        <DataGridTextColumn Binding="{Binding Dto.SourceTerminalCode}" Header="From Terminal"/>
+        <DataGridTextColumn Binding="{Binding Dto.DestTerminalCode}" Header="To Terminal"/>
+        <DataGridTextColumn Binding="{Binding Dto.Product.Code}" Header="Product"/>
+        <DataGridTextColumn Binding="{Binding Dto.RequestedCount}" Header="Requested"/>
+        <DataGridTextColumn Binding="{Binding Dto.TransferredCount}" Header="Transfered"/>
+        <DataGridTextColumn Binding="{Binding Dto.CreateDate}" Header="Date"/>
+        <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Status">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding Path=Dto.Status, Converter={StaticResource CTrxStatus}}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+      </DataGrid.Columns>
+    </DataGrid>
+    <Label Grid.Row="1" Grid.Column="1" Content="Transfers:" HorizontalAlignment="Left" FontSize="24"/>
+    <Button Command="{Binding AddNewItem}" Content="Add New" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource GK_AddButton}"/>
+  </Grid>
+</UserControl>

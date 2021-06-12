@@ -1,0 +1,245 @@
+﻿<Application x:Class="POSK.ClientApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:POSK.ClientApp"
+            Startup="ApplicationStartup">
+    <!--StartupUri="Debug.xaml">-->
+
+    <!--StartupUri="MainWindow.xaml">-->
+
+    <Application.Resources>
+        <ImageBrush x:Key="Imgs.Border.SelectLang" ImageSource="Style/selectLangBorder.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Screen.Back" ImageSource="Style/back.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Button" ImageSource="Style/button.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Button.press" ImageSource="Style/button_press.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Button.CheckOut" ImageSource="Style/checkOut.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Button.press.CheckOut" ImageSource="Style/checkOutPress.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Button.Continue" ImageSource="Style/continue.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Button.press.Continue" ImageSource="Style/continuePress.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Button.Remove" ImageSource="Style/remove.png" Stretch="Fill"/>
+        <ImageBrush x:Key="Imgs.Button.press.Remove" ImageSource="Style/removePress.png" Stretch="Fill"/>
+
+        <ImageBrush x:Key="Imgs.Cart.Row" ImageSource="Style/cartRow.png" Stretch="Fill"/>
+
+        <LinearGradientBrush x:Key="GradientBrush.cart" EndPoint="0,1" MappingMode="RelativeToBoundingBox" StartPoint="1,0">
+            <GradientStop Color="#FFC8C8C8" Offset="1"/>
+            <GradientStop Color="#FFDFDFDF" Offset="0.5"/>
+            <GradientStop Color="#FFC8C8C8" Offset="0"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="GradientBrush.text.ok" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#f0078507"/>
+            <GradientStop Color="#FF008502" Offset="0.856"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="GradientBrush.text.err" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF30E223"/>
+            <GradientStop Color="#FF008502" Offset="0.856"/>
+        </LinearGradientBrush>
+        <DropShadowEffect x:Key="TextShadow"
+                          BlurRadius="1"
+                          Direction="392"
+                          Color="#333333"
+                          RenderingBias="Quality" Opacity="0.6" ShadowDepth="1"/>
+        <DropShadowEffect x:Key="TextShadow01"
+                          BlurRadius="1"
+                          Direction="392"
+                          Color="#bbbbbb"
+                          RenderingBias="Quality" Opacity="0.6" ShadowDepth="0"/>
+        
+        <Style TargetType="{x:Type Button}" x:Key="ProductButton">
+            <Setter Property="Background" Value="{StaticResource Imgs.Button}" />
+            <Setter Property="Foreground" Value="#0f2033" />
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="FontFamily" Value="Traditional Arabic" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Padding" Value="10,0,10,10"/>
+            <Setter Property="Margin" Value="10,10,10,10"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}" Focusable="False">
+                            <Grid Focusable="False">
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" Margin="0,0,0,0" Focusable="False"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Imgs.Button.press}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#707070" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="CheckOutButton">
+            <Setter Property="Background" Value="{StaticResource Imgs.Button.CheckOut}" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="28" />
+            <Setter Property="FontFamily" Value="Traditional Arabic" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Padding" Value="5,0,5,5"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Height" Value="86"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}" Focusable="False">
+                            <Grid Focusable="False">
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}"
+                                                   HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="75,0,0,15" Focusable="False" Effect="{StaticResource TextShadow}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Imgs.Button.press.CheckOut}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#707070" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ContinueButton">
+            <Setter Property="Background" Value="{StaticResource Imgs.Button.Continue}" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="FontFamily" Value="Traditional Arabic" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Padding" Value="10,0,10,10"/>
+            <Setter Property="Margin" Value="0,20,0,0"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Width" Value="349"/>
+            <Setter Property="Height" Value="150"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}" Focusable="False">
+                            <Grid Focusable="False">
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" 
+                                  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="115,0,0,30" Focusable="False" Effect="{StaticResource TextShadow}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Imgs.Button.press.Continue}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#707070" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="RemoveButton">
+            <Setter Property="Background" Value="{StaticResource Imgs.Button.Remove}" />
+            <Setter Property="Foreground" Value="#ffffff" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="Traditional Arabic" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Padding" Value="10,0,10,10"/>
+            <Setter Property="Margin" Value="10,18,10,10"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}" Focusable="False">
+                            <Grid Focusable="False">
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" 
+                                  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="60,7,0,20" Focusable="False" Effect="{StaticResource TextShadow}"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Imgs.Button.press.Remove}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#707070" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Border}" x:Key="CartRow">
+            <Setter Property="Background" Value="{StaticResource GradientBrush.cart}" />
+            <Setter Property="Width" Value="750" />
+            <Setter Property="MinHeight" Value="90" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="225" ShadowDepth="10" BlurRadius="20" Opacity="0.4" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Border}" x:Key="CartGroup">
+            <Setter Property="Background" Value="{StaticResource GradientBrush.cart}" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="225" ShadowDepth="10" BlurRadius="20" Opacity="0.4" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Border}" x:Key="msg">
+            <Setter Property="Background" Value="#efefef" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Border.Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="225" ShadowDepth="10" BlurRadius="20" Opacity="0.4" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style TargetType="{x:Type TextBlock}" x:Key="Label01">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="vLabel01">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="msgOk">
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Foreground" Value="#FF0BA82B" />
+            <Setter Property="Effect" Value="{StaticResource TextShadow01}" />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}" x:Key="msgErr">
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="FontWeight" Value="ExtraBold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Foreground" Value="#d50000" />
+            <Setter Property="Effect" Value="{StaticResource TextShadow01}" />
+        </Style>
+
+    </Application.Resources>
+</Application>

@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Geeky.POSK.Server.Dashboard.Views.VendorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cnv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             xmlns:local="clr-namespace:Geeky.POSK.Server.Dashboard.Views"
+             xmlns:dto="clr-namespace:Geeky.POSK.DataContracts;assembly=Geeky.POSK.DataContracts" 
+             mc:Ignorable="d" d:DesignWidth="300" MinWidth="350">
+    <UserControl.Resources>
+        <cnv:ImageConverter x:Key="CImage"/>
+    </UserControl.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Code:"/>
+        <TextBox Text="{Binding Dto.Code, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="0"/>
+        <Label Grid.Row="1" Grid.Column="0" Content="Name 1:"/>
+        <TextBox Text="{Binding Dto.Language1Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Grid.Column="1"/>
+        <Label Grid.Row="1" Grid.Column="2" Content="Name 2:"/>
+        <TextBox Text="{Binding Dto.Language2Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Grid.Column="3"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Name 3:"/>
+        <TextBox Text="{Binding Dto.Language3Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Grid.Column="1"/>
+        <Label Grid.Row="3" Grid.Column="2" Content="Name 4:"/>
+        <TextBox Text="{Binding Dto.Language4Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Grid.Column="3"/>
+        <Label Grid.Row="5" Grid.Column="0" Content="Is Active:"/>
+        <CheckBox IsChecked="{Binding Dto.IsActive, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Grid.Column="1"/>
+        <Label Grid.Row="6" Grid.Column="2" Content="Logo:"/>
+        <Image Source="{Binding Dto.Logo, Mode=TwoWay, Converter={StaticResource ResourceKey=CImage}}" Width="70" Height="70"  Grid.Row="6" Grid.Column="3"/>
+        <Button x:Name="changeLogo" Click="changeLogo_Click" Content="Change logo" Grid.Row="7" Grid.Column="3"/>
+        <Label Grid.Row="8" Grid.Column="2" Content="Printed Logo:"/>
+        <Image Source="{Binding Dto.PrintedLogo, Mode=TwoWay, Converter={StaticResource ResourceKey=CImage}}" Width="70" Height="70"  Grid.Row="8" Grid.Column="3"/>
+        <Button x:Name="changePrintedLogo" Click="changePrintableLogo_Click" Content="Change printable logo" Grid.Row="9" Grid.Column="3"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Instructions"/>
+        <TextBox MaxLines="10" Text="{Binding Dto.Instructions, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Grid.Column="1" Grid.RowSpan="4" 
+                 VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="Geeky.POSK.Server.Dashboard.PopupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Geeky.POSK.Server.Dashboard"
+        xmlns:vm="clr-namespace:Geeky.POSK.Server.ViewModels;assembly=Geeky.POSK.Server.ViewModels"
+        xmlns:dto="clr-namespace:Geeky.POSK.DataContracts;assembly=Geeky.POSK.DataContracts"
+        xmlns:views ="clr-namespace:Geeky.POSK.Server.Dashboard.Views" 
+        mc:Ignorable="d"
+        Title="" Height="300" Width="300" 
+        WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" WindowStyle="ToolWindow" Padding="20">
+  <Window.Resources>
+    <DataTemplate DataType="{x:Type vm:VendorViewModel}">
+      <views:VendorView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:ProductViewModel}">
+      <views:ProductView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:TerminalViewModel}">
+      <views:TerminalView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:PinTransferViewModel}">
+      <views:PinTransferView/>
+    </DataTemplate>
+  </Window.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="100*"/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+    <ContentControl Content="{Binding}" Grid.Row="0" Margin="20"/>
+    <StackPanel Background="{StaticResource brush_popWindowComands}" Grid.Row="1">
+      <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition/>
+          <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Command="{Binding SaveItem}" Content="Save" Grid.Column="0" Style="{StaticResource GK_SaveButton}"/>
+        <Button Command="{Binding CancelSave}" Content="Cancel"  Grid.Column="1" Style="{StaticResource GK_CancelButton}"/>
+      </Grid>
+    </StackPanel>
+
+
+  </Grid>
+</Window>

@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="POSK.ClientApp.Views.ShoppingCartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cnv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             xmlns:conv="clr-namespace:POSK.ClientApp.Converters"
+             xmlns:views="clr-namespace:POSK.ClientApp.Views"
+             xmlns:vm="clr-namespace:POSK.Client.ViewModels;assembly=POSK.Client.ViewModels"
+             mc:Ignorable="d" 
+             xmlns:lex="http://wpflocalizeextension.codeplex.com">
+  <UserControl.Resources>
+    <cnv:ImageConverter x:Key="CImage"/>
+    <conv:ArrayToStringLocalized x:Key="CLocal" />
+  </UserControl.Resources>
+  <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+      <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <ItemsControl Grid.Row="0" ItemsSource="{Binding CartItems}" 
+                  HorizontalAlignment="Center" VerticalAlignment="Center" 
+                  Background="{x:Null}" BorderBrush="{x:Null}" 
+                  HorizontalContentAlignment="Center">
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+          <UniformGrid Columns="1" />
+        </ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <Border Style="{StaticResource CartRow}">
+            <Grid Margin="10 0 0 0">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="AUTO"/>
+                <ColumnDefinition Width="AUTO"/>
+                <ColumnDefinition Width="30*"/>
+              </Grid.ColumnDefinitions>
+              <Image Grid.Column="0" Source="{Binding VendorLogo, Converter={StaticResource ResourceKey=CImage}}" Width="70" Height="70" />
+                            <TextBlock Grid.Column="1" Text="{Binding VendorNames, Converter={StaticResource ResourceKey=CLocal}}" Style="{StaticResource Label01}" HorizontalAlignment="Left" />
+                            <TextBlock Grid.Column="2" Text="{Binding ProductNames, Converter={StaticResource ResourceKey=CLocal}}" Style="{StaticResource Label01}" HorizontalAlignment="Left" />
+              <Button Grid.Column="3" Content="Remove"  Style="{StaticResource RemoveButton}" Width="164" Height="70" HorizontalAlignment="Right" 
+                    Command="{Binding DataContext.RemoveItemFromCart,RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" 
+                    CommandParameter="{Binding Id}"/>
+            </Grid>
+          </Border>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <Border Grid.Row="1" Style="{StaticResource CartRow}">
+      <Grid HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="auto"/>
+          <ColumnDefinition Width="auto"/>
+          <ColumnDefinition Width="auto"/>
+          <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" Text="{lex:Loc TOTAL_VALUE}" Style="{StaticResource Label01}"/>
+        <TextBlock Grid.Column="1" Text="{Binding TotalValue}" Style="{StaticResource vLabel01}" Foreground="#d50000"/>
+        <TextBlock Grid.Column="2" Text="{lex:Loc TOTAL_PAID}" Style="{StaticResource Label01}"/>
+        <TextBlock Grid.Column="3" Text="{Binding TotalPaid}" Style="{StaticResource vLabel01}" Foreground="#008e07"/>
+      </Grid>
+    </Border>
+    <Border Grid.Row="2" Style="{StaticResource CartRow}">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Content="{lex:Loc CONTINUE_SHOPPING}" Command="{Binding ContinueShopping}" 
+                    Style="{StaticResource ContinueButton}"/>
+        <Button Grid.Column="1" Content="{lex:Loc PAY_ORDER}" Command="{Binding PayOrder}" 
+                    Style="{StaticResource CheckOutButton}"/>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

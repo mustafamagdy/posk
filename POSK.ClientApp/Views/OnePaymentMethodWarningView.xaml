@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="POSK.ClientApp.Views.OnePaymentMethodWarningView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POSK.ClientApp.Views"
+             xmlns:r="clr-namespace:POSK.ClientApp.Properties"
+             xmlns:conv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com">
+  <UserControl.Resources>
+    <conv:BoolToVisibilityConverter x:Key="CVisible" FalseValue="Collapsed" TrueValue="Visible" />
+  </UserControl.Resources>
+  <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Border Grid.Column="0" Grid.Row="2" Style="{StaticResource CartGroup}" >
+      <TextBlock Text="{lex:Loc ONLY_THOSE_ARE_WORKING}" Style="{StaticResource Label01}"/>
+    </Border>
+    <Border Grid.Column="0" Grid.Row="2" Style="{StaticResource CartGroup}" Visibility="{Binding Path=CashCode, Converter={StaticResource CVisible}}" >
+      <TextBlock Text="{lex:Loc CASH_CODE_WORKING}" Foreground="#008e07" Style="{StaticResource vLabel01}"/>
+    </Border>
+    <Border Grid.Column="0" Grid.Row="2" Style="{StaticResource CartGroup}" Visibility="{Binding Path=CardReader, Converter={StaticResource CVisible}}" >
+      <TextBlock Text="{lex:Loc CARD_READER_WORKING}" Foreground="#008e07" Style="{StaticResource vLabel01}"/>
+    </Border>
+    <!--<Border Grid.Column="0" Grid.Row="2" Style="{StaticResource CartGroup}" Visibility="{Binding Printer}" >
+            <TextBlock Text="{lex:Loc PRINTER_WORKING}"/>
+        </Border>-->
+
+    <Button 
+            Margin="5,5,5,5"
+            VerticalAlignment="Top" 
+            Style="{StaticResource ProductButton}"
+            Command="{Binding MoveOn}"
+            Height="133" Width="175">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="6*"/>
+          <ColumnDefinition Width="14*"/>
+          <ColumnDefinition Width="25*"/>
+          <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="20*"/>
+          <RowDefinition Height="40*"/>
+          <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="{lex:Loc YES}"  FontSize="28"  Grid.Column="2" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Image Source="/Style/yes.png" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+      </Grid>
+    </Button>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,468 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Core", "01-Core", "{0B76603C-6D5C-4FDD-909C-F36C201E26A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-MetaData", "00-MetaData", "{E58B6B36-2C0F-4D44-8B57-5E3574D4251B}"
+	ProjectSection(SolutionItems) = preProject
+		Tasks.txt = Tasks.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Server", "04-Server", "{DF2C1969-6E18-4750-A569-CB8DF01D3D9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-Client", "05-Client", "{439AEDC7-F28B-4B7C-91B1-C0043AB868A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06-ServerTests", "06-ServerTests", "{BC8DA4BB-FCFB-4704-A886-895DA3D6148D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07-ClientTests", "07-ClientTests", "{5A10A7EA-9C69-407F-AAF8-3D89BD8D95AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08-ClientPackage", "08-ClientPackage", "{4F78A8A6-BCB7-477C-8455-D7D571521F66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{E1891727-8744-447A-9B2B-938BDFCE6D85}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
+		nuget.exe = nuget.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Models", "02-Models", "{CA5984F2-1F85-4420-AF5A-7B5D017BEDF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Mapping", "03-Mapping", "{74918917-E85C-49BD-BD5F-1FC9102D78BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-Context", "04-Context", "{1052A42F-7CBF-4D37-9C10-FBA607658DAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Hosts", "02-Hosts", "{F052B323-2E51-42FE-8E44-9A14B14A647B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Contracts", "02-Contracts", "{B5B132B5-7419-4822-9501-4026BACA1CEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-Repository", "05-Repository", "{76F511BA-A329-4C9C-AEE6-167E232825E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-DataAcess", "02-DataAcess", "{D1D285CC-1035-4616-BEC6-E362C7A1E635}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Presentation", "03-Presentation", "{E1E08B68-8909-4CA3-B334-95FA3F02A7D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Service", "01-Service", "{9E448D11-ED32-405B-A12C-5314EE10704C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Proxy", "03-Proxy", "{B21E4008-8E1F-477C-B9E0-0AF42033DE62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Core", "01-Core", "{8A7C55E8-FC00-48DC-922B-94DFFD2301D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Infrastructure", "01-Infrastructure", "{98AB9A66-9D58-42DE-8542-297C6F2F24EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Devices", "01-Devices", "{E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Service", "02-Service", "{1794893F-7A42-4D7E-B65E-9582C8A6BD97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Presentation", "03-Presentation", "{3F33AB6F-EEEE-4107-AA57-5B0B0C693C2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Infrastructore.Core", "Geeky.POSK.Infrastructore.Core\Geeky.POSK.Infrastructore.Core.csproj", "{CB1493F9-7E57-461B-8544-D31896D259F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Models", "Geeky.POSK.Models\Geeky.POSK.Models.csproj", "{E1C9CE9D-8A73-47ED-AA8A-8807C16CE928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.ORM.Mapping", "Geeky.POSK.ORM.Mapping\Geeky.POSK.ORM.Mapping.csproj", "{4C977A7D-1AD3-4C4B-817A-FE511C6414AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.ORM.Context.EF", "Geeky.POSK.ORM.Context.EF\Geeky.POSK.ORM.Context.EF.csproj", "{EBFCA7B5-12A6-43C4-A311-646E9472AD9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.ClientApp", "POSK.ClientApp\POSK.ClientApp.csproj", "{2F73AEDA-3D84-4A6B-87C5-94325440A4CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.ServerTesting", "Geeky.POSK.ServerTesting\Geeky.POSK.ServerTesting.csproj", "{19D8B53A-92DD-4E87-A536-BA6BFC234831}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.ClientTesting", "Geeky.POSK.ClientTesting\Geeky.POSK.ClientTesting.csproj", "{FF6DF5B8-85DA-4B69-A8C0-7D90DF30C83B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.DataContracts", "Geeky.POSK.DataContracts\Geeky.POSK.DataContracts.csproj", "{C51F52C6-2949-4222-A38B-AEE46E3CA4F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.ServiceContracts", "Geeky.POSK.ServiceContracts\Geeky.POSK.ServiceContracts.csproj", "{1521B021-727D-4B54-8A3A-8176AAB0323D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.ORM.Context.Core", "Geeky.POSK.ORM.Context.Core\Geeky.POSK.ORM.Context.Core.csproj", "{0352932D-BAE5-40AD-A285-A9B1C52EA03A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{4CF20B79-8687-4370-ABCC-157B0D9019D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Hosts.ConsoleHost", "Geeky.POSK.Hosts.ConsoleHost\Geeky.POSK.Hosts.ConsoleHost.csproj", "{20A0D990-1920-4DAB-9EE6-64FC66B81B0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Hosts.WinSvc", "Geeky.POSK.Hosts.WinSvc\Geeky.POSK.Hosts.WinSvc.csproj", "{85555862-3B36-48E5-BE01-2F924BB6F9AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Server.Dashboard", "Geeky.POSK.Server.Dashboard\Geeky.POSK.Server.Dashboard.csproj", "{471F3F67-11CA-42A9-8A2D-F7035BE73413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Services", "Geeky.POSK.Services\Geeky.POSK.Services.csproj", "{1366FCC1-DAB0-4926-914A-298DA35EFFFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Client.Proxy", "Geeky.POSK.Client.Proxy\Geeky.POSK.Client.Proxy.csproj", "{948E8139-327C-457C-B264-269EB3DE927C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Repository.Core", "Geeky.POSK.Repository.Core\Geeky.POSK.Repository.Core.csproj", "{66E0BB17-BDF9-446A-91D2-E40B8D08A40C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Repository", "Geeky.POSK.Repository\Geeky.POSK.Repository.csproj", "{38D81923-C6A0-4E19-A2E2-A7E1DE8F8519}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Repository.Interfface", "Geeky.POSK.Repository.Interfface\Geeky.POSK.Repository.Interfface.csproj", "{6D22DC35-7CB4-4FC0-AE87-11F9DB107F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Client.ApplicationService.Interface", "POSK.Client.ApplicationService.Interface\POSK.Client.ApplicationService.Interface.csproj", "{F0A21F41-1299-4C15-BEA4-5F05C146FF25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Client.ApplicationService", "POSK.Client.ApplicationService\POSK.Client.ApplicationService.csproj", "{6A2DCD31-5B3D-439C-8F71-C14F69211BE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Client.ViewModels", "POSK.Client.ViewModels\POSK.Client.ViewModels.csproj", "{A704ED8E-C8AE-4378-A90F-71B12E3936FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.Server.ViewModels", "Geeky.POSK.Server.ViewModels\Geeky.POSK.Server.ViewModels.csproj", "{F191E2AD-24A1-44B8-9E46-33CE095DAF05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geeky.POSK.WPF.Core", "Geeky.POSK.WPF.Core\Geeky.POSK.WPF.Core.csproj", "{F83FF00E-7ABD-4D8E-9496-264DE4A26AF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Client.CashCode", "POSK.Client.CashCode\POSK.Client.CashCode.csproj", "{07332D53-BDB4-4FCC-B4E6-D4E460B482F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Client.CashCode.Interface", "POSK.Client.CashCode.Interface\POSK.Client.CashCode.Interface.csproj", "{5F183437-A3E6-4520-8E81-F3EB05936001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Payment.Interface", "POSK.Payment.Interface\POSK.Payment.Interface.csproj", "{FC5B2D8E-F27D-4A3A-8ED2-95876D8046E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Client.CRT.Interface", "POSK.Client.CRT.Interface\POSK.Client.CRT.Interface.csproj", "{906ADEDE-5F7F-4D43-929A-7EE7654DFA1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Client.CRT", "POSK.Client.CRT\POSK.Client.CRT.csproj", "{342900A1-5C6E-432F-BDB0-CC409FC87DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Printers", "POSK.Printers\POSK.Printers.csproj", "{2DB6870E-3A9F-4212-8F2D-46143476A876}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{9543ED67-A489-4424-9B5E-CE7363CE1229}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSK.Printers.Interface", "POSK.Printers.Interface\POSK.Printers.Interface.csproj", "{869C204C-F7BB-4F2C-ABDD-365E84B539B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Madaa.Lib.Win.Services", "Madaa.Lib.Win.Services\Madaa.Lib.Win.Services.csproj", "{CBAA3A56-3772-4120-874D-C13F182D49F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LicTool", "LicTool\LicTool.csproj", "{5C334325-35E4-40BD-995A-8B45B2E55741}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB1493F9-7E57-461B-8544-D31896D259F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB1493F9-7E57-461B-8544-D31896D259F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB1493F9-7E57-461B-8544-D31896D259F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB1493F9-7E57-461B-8544-D31896D259F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1C9CE9D-8A73-47ED-AA8A-8807C16CE928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1C9CE9D-8A73-47ED-AA8A-8807C16CE928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1C9CE9D-8A73-47ED-AA8A-8807C16CE928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1C9CE9D-8A73-47ED-AA8A-8807C16CE928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C977A7D-1AD3-4C4B-817A-FE511C6414AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C977A7D-1AD3-4C4B-817A-FE511C6414AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C977A7D-1AD3-4C4B-817A-FE511C6414AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C977A7D-1AD3-4C4B-817A-FE511C6414AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBFCA7B5-12A6-43C4-A311-646E9472AD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBFCA7B5-12A6-43C4-A311-646E9472AD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBFCA7B5-12A6-43C4-A311-646E9472AD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBFCA7B5-12A6-43C4-A311-646E9472AD9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F73AEDA-3D84-4A6B-87C5-94325440A4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F73AEDA-3D84-4A6B-87C5-94325440A4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F73AEDA-3D84-4A6B-87C5-94325440A4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F73AEDA-3D84-4A6B-87C5-94325440A4CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D8B53A-92DD-4E87-A536-BA6BFC234831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D8B53A-92DD-4E87-A536-BA6BFC234831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D8B53A-92DD-4E87-A536-BA6BFC234831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D8B53A-92DD-4E87-A536-BA6BFC234831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF6DF5B8-85DA-4B69-A8C0-7D90DF30C83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF6DF5B8-85DA-4B69-A8C0-7D90DF30C83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF6DF5B8-85DA-4B69-A8C0-7D90DF30C83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF6DF5B8-85DA-4B69-A8C0-7D90DF30C83B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51F52C6-2949-4222-A38B-AEE46E3CA4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51F52C6-2949-4222-A38B-AEE46E3CA4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51F52C6-2949-4222-A38B-AEE46E3CA4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51F52C6-2949-4222-A38B-AEE46E3CA4F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1521B021-727D-4B54-8A3A-8176AAB0323D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1521B021-727D-4B54-8A3A-8176AAB0323D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1521B021-727D-4B54-8A3A-8176AAB0323D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1521B021-727D-4B54-8A3A-8176AAB0323D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0352932D-BAE5-40AD-A285-A9B1C52EA03A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0352932D-BAE5-40AD-A285-A9B1C52EA03A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0352932D-BAE5-40AD-A285-A9B1C52EA03A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0352932D-BAE5-40AD-A285-A9B1C52EA03A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF20B79-8687-4370-ABCC-157B0D9019D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF20B79-8687-4370-ABCC-157B0D9019D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF20B79-8687-4370-ABCC-157B0D9019D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF20B79-8687-4370-ABCC-157B0D9019D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A0D990-1920-4DAB-9EE6-64FC66B81B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A0D990-1920-4DAB-9EE6-64FC66B81B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A0D990-1920-4DAB-9EE6-64FC66B81B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A0D990-1920-4DAB-9EE6-64FC66B81B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85555862-3B36-48E5-BE01-2F924BB6F9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85555862-3B36-48E5-BE01-2F924BB6F9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85555862-3B36-48E5-BE01-2F924BB6F9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85555862-3B36-48E5-BE01-2F924BB6F9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{471F3F67-11CA-42A9-8A2D-F7035BE73413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{471F3F67-11CA-42A9-8A2D-F7035BE73413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{471F3F67-11CA-42A9-8A2D-F7035BE73413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{471F3F67-11CA-42A9-8A2D-F7035BE73413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1366FCC1-DAB0-4926-914A-298DA35EFFFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1366FCC1-DAB0-4926-914A-298DA35EFFFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1366FCC1-DAB0-4926-914A-298DA35EFFFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1366FCC1-DAB0-4926-914A-298DA35EFFFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{948E8139-327C-457C-B264-269EB3DE927C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948E8139-327C-457C-B264-269EB3DE927C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948E8139-327C-457C-B264-269EB3DE927C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948E8139-327C-457C-B264-269EB3DE927C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E0BB17-BDF9-446A-91D2-E40B8D08A40C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E0BB17-BDF9-446A-91D2-E40B8D08A40C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E0BB17-BDF9-446A-91D2-E40B8D08A40C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E0BB17-BDF9-446A-91D2-E40B8D08A40C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D81923-C6A0-4E19-A2E2-A7E1DE8F8519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D81923-C6A0-4E19-A2E2-A7E1DE8F8519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D81923-C6A0-4E19-A2E2-A7E1DE8F8519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D81923-C6A0-4E19-A2E2-A7E1DE8F8519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D22DC35-7CB4-4FC0-AE87-11F9DB107F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D22DC35-7CB4-4FC0-AE87-11F9DB107F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D22DC35-7CB4-4FC0-AE87-11F9DB107F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D22DC35-7CB4-4FC0-AE87-11F9DB107F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0A21F41-1299-4C15-BEA4-5F05C146FF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0A21F41-1299-4C15-BEA4-5F05C146FF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0A21F41-1299-4C15-BEA4-5F05C146FF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0A21F41-1299-4C15-BEA4-5F05C146FF25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A2DCD31-5B3D-439C-8F71-C14F69211BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A2DCD31-5B3D-439C-8F71-C14F69211BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A2DCD31-5B3D-439C-8F71-C14F69211BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A2DCD31-5B3D-439C-8F71-C14F69211BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A704ED8E-C8AE-4378-A90F-71B12E3936FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A704ED8E-C8AE-4378-A90F-71B12E3936FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A704ED8E-C8AE-4378-A90F-71B12E3936FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A704ED8E-C8AE-4378-A90F-71B12E3936FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F191E2AD-24A1-44B8-9E46-33CE095DAF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F191E2AD-24A1-44B8-9E46-33CE095DAF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F191E2AD-24A1-44B8-9E46-33CE095DAF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F191E2AD-24A1-44B8-9E46-33CE095DAF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83FF00E-7ABD-4D8E-9496-264DE4A26AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83FF00E-7ABD-4D8E-9496-264DE4A26AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83FF00E-7ABD-4D8E-9496-264DE4A26AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83FF00E-7ABD-4D8E-9496-264DE4A26AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07332D53-BDB4-4FCC-B4E6-D4E460B482F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07332D53-BDB4-4FCC-B4E6-D4E460B482F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07332D53-BDB4-4FCC-B4E6-D4E460B482F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07332D53-BDB4-4FCC-B4E6-D4E460B482F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F183437-A3E6-4520-8E81-F3EB05936001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F183437-A3E6-4520-8E81-F3EB05936001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F183437-A3E6-4520-8E81-F3EB05936001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F183437-A3E6-4520-8E81-F3EB05936001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC5B2D8E-F27D-4A3A-8ED2-95876D8046E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC5B2D8E-F27D-4A3A-8ED2-95876D8046E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC5B2D8E-F27D-4A3A-8ED2-95876D8046E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC5B2D8E-F27D-4A3A-8ED2-95876D8046E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{906ADEDE-5F7F-4D43-929A-7EE7654DFA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906ADEDE-5F7F-4D43-929A-7EE7654DFA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906ADEDE-5F7F-4D43-929A-7EE7654DFA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906ADEDE-5F7F-4D43-929A-7EE7654DFA1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{342900A1-5C6E-432F-BDB0-CC409FC87DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{342900A1-5C6E-432F-BDB0-CC409FC87DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{342900A1-5C6E-432F-BDB0-CC409FC87DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{342900A1-5C6E-432F-BDB0-CC409FC87DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB6870E-3A9F-4212-8F2D-46143476A876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB6870E-3A9F-4212-8F2D-46143476A876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB6870E-3A9F-4212-8F2D-46143476A876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB6870E-3A9F-4212-8F2D-46143476A876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9543ED67-A489-4424-9B5E-CE7363CE1229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9543ED67-A489-4424-9B5E-CE7363CE1229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9543ED67-A489-4424-9B5E-CE7363CE1229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9543ED67-A489-4424-9B5E-CE7363CE1229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{869C204C-F7BB-4F2C-ABDD-365E84B539B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869C204C-F7BB-4F2C-ABDD-365E84B539B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869C204C-F7BB-4F2C-ABDD-365E84B539B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869C204C-F7BB-4F2C-ABDD-365E84B539B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAA3A56-3772-4120-874D-C13F182D49F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAA3A56-3772-4120-874D-C13F182D49F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAA3A56-3772-4120-874D-C13F182D49F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAA3A56-3772-4120-874D-C13F182D49F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C334325-35E4-40BD-995A-8B45B2E55741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C334325-35E4-40BD-995A-8B45B2E55741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C334325-35E4-40BD-995A-8B45B2E55741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C334325-35E4-40BD-995A-8B45B2E55741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E1891727-8744-447A-9B2B-938BDFCE6D85} = {E58B6B36-2C0F-4D44-8B57-5E3574D4251B}
+		{CA5984F2-1F85-4420-AF5A-7B5D017BEDF5} = {D1D285CC-1035-4616-BEC6-E362C7A1E635}
+		{74918917-E85C-49BD-BD5F-1FC9102D78BD} = {D1D285CC-1035-4616-BEC6-E362C7A1E635}
+		{1052A42F-7CBF-4D37-9C10-FBA607658DAD} = {D1D285CC-1035-4616-BEC6-E362C7A1E635}
+		{F052B323-2E51-42FE-8E44-9A14B14A647B} = {DF2C1969-6E18-4750-A569-CB8DF01D3D9F}
+		{76F511BA-A329-4C9C-AEE6-167E232825E3} = {D1D285CC-1035-4616-BEC6-E362C7A1E635}
+		{D1D285CC-1035-4616-BEC6-E362C7A1E635} = {0B76603C-6D5C-4FDD-909C-F36C201E26A9}
+		{E1E08B68-8909-4CA3-B334-95FA3F02A7D7} = {DF2C1969-6E18-4750-A569-CB8DF01D3D9F}
+		{9E448D11-ED32-405B-A12C-5314EE10704C} = {DF2C1969-6E18-4750-A569-CB8DF01D3D9F}
+		{8A7C55E8-FC00-48DC-922B-94DFFD2301D2} = {D1D285CC-1035-4616-BEC6-E362C7A1E635}
+		{98AB9A66-9D58-42DE-8542-297C6F2F24EF} = {0B76603C-6D5C-4FDD-909C-F36C201E26A9}
+		{E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36} = {439AEDC7-F28B-4B7C-91B1-C0043AB868A2}
+		{1794893F-7A42-4D7E-B65E-9582C8A6BD97} = {439AEDC7-F28B-4B7C-91B1-C0043AB868A2}
+		{3F33AB6F-EEEE-4107-AA57-5B0B0C693C2A} = {439AEDC7-F28B-4B7C-91B1-C0043AB868A2}
+		{CB1493F9-7E57-461B-8544-D31896D259F1} = {98AB9A66-9D58-42DE-8542-297C6F2F24EF}
+		{E1C9CE9D-8A73-47ED-AA8A-8807C16CE928} = {CA5984F2-1F85-4420-AF5A-7B5D017BEDF5}
+		{4C977A7D-1AD3-4C4B-817A-FE511C6414AA} = {74918917-E85C-49BD-BD5F-1FC9102D78BD}
+		{EBFCA7B5-12A6-43C4-A311-646E9472AD9B} = {1052A42F-7CBF-4D37-9C10-FBA607658DAD}
+		{2F73AEDA-3D84-4A6B-87C5-94325440A4CB} = {3F33AB6F-EEEE-4107-AA57-5B0B0C693C2A}
+		{19D8B53A-92DD-4E87-A536-BA6BFC234831} = {BC8DA4BB-FCFB-4704-A886-895DA3D6148D}
+		{FF6DF5B8-85DA-4B69-A8C0-7D90DF30C83B} = {5A10A7EA-9C69-407F-AAF8-3D89BD8D95AE}
+		{C51F52C6-2949-4222-A38B-AEE46E3CA4F2} = {B5B132B5-7419-4822-9501-4026BACA1CEF}
+		{1521B021-727D-4B54-8A3A-8176AAB0323D} = {B5B132B5-7419-4822-9501-4026BACA1CEF}
+		{0352932D-BAE5-40AD-A285-A9B1C52EA03A} = {8A7C55E8-FC00-48DC-922B-94DFFD2301D2}
+		{4CF20B79-8687-4370-ABCC-157B0D9019D5} = {BC8DA4BB-FCFB-4704-A886-895DA3D6148D}
+		{20A0D990-1920-4DAB-9EE6-64FC66B81B0F} = {F052B323-2E51-42FE-8E44-9A14B14A647B}
+		{85555862-3B36-48E5-BE01-2F924BB6F9AF} = {F052B323-2E51-42FE-8E44-9A14B14A647B}
+		{471F3F67-11CA-42A9-8A2D-F7035BE73413} = {E1E08B68-8909-4CA3-B334-95FA3F02A7D7}
+		{1366FCC1-DAB0-4926-914A-298DA35EFFFD} = {9E448D11-ED32-405B-A12C-5314EE10704C}
+		{948E8139-327C-457C-B264-269EB3DE927C} = {B21E4008-8E1F-477C-B9E0-0AF42033DE62}
+		{66E0BB17-BDF9-446A-91D2-E40B8D08A40C} = {CA5984F2-1F85-4420-AF5A-7B5D017BEDF5}
+		{38D81923-C6A0-4E19-A2E2-A7E1DE8F8519} = {76F511BA-A329-4C9C-AEE6-167E232825E3}
+		{6D22DC35-7CB4-4FC0-AE87-11F9DB107F70} = {76F511BA-A329-4C9C-AEE6-167E232825E3}
+		{F0A21F41-1299-4C15-BEA4-5F05C146FF25} = {1794893F-7A42-4D7E-B65E-9582C8A6BD97}
+		{6A2DCD31-5B3D-439C-8F71-C14F69211BE0} = {1794893F-7A42-4D7E-B65E-9582C8A6BD97}
+		{A704ED8E-C8AE-4378-A90F-71B12E3936FE} = {3F33AB6F-EEEE-4107-AA57-5B0B0C693C2A}
+		{F191E2AD-24A1-44B8-9E46-33CE095DAF05} = {E1E08B68-8909-4CA3-B334-95FA3F02A7D7}
+		{F83FF00E-7ABD-4D8E-9496-264DE4A26AF5} = {98AB9A66-9D58-42DE-8542-297C6F2F24EF}
+		{07332D53-BDB4-4FCC-B4E6-D4E460B482F6} = {E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36}
+		{5F183437-A3E6-4520-8E81-F3EB05936001} = {E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36}
+		{FC5B2D8E-F27D-4A3A-8ED2-95876D8046E7} = {E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36}
+		{906ADEDE-5F7F-4D43-929A-7EE7654DFA1B} = {E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36}
+		{342900A1-5C6E-432F-BDB0-CC409FC87DBC} = {E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36}
+		{2DB6870E-3A9F-4212-8F2D-46143476A876} = {E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36}
+		{9543ED67-A489-4424-9B5E-CE7363CE1229} = {5A10A7EA-9C69-407F-AAF8-3D89BD8D95AE}
+		{869C204C-F7BB-4F2C-ABDD-365E84B539B4} = {E09B4028-4FCB-41AC-8BA7-CA7DCF08EF36}
+		{CBAA3A56-3772-4120-874D-C13F182D49F0} = {98AB9A66-9D58-42DE-8542-297C6F2F24EF}
+		{5C334325-35E4-40BD-995A-8B45B2E55741} = {9E448D11-ED32-405B-A12C-5314EE10704C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48EC9E50-6FBF-4260-9176-A5E09DD6A44B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 35
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mustafamagdy.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Geeky.POSK.Infrastructore.Core\\Geeky.POSK.Infrastructore.Core.csproj
+		SccProjectTopLevelParentUniqueName1 = Geeky.POSK.sln
+		SccProjectName1 = Geeky.POSK.Infrastructore.Core
+		SccLocalPath1 = Geeky.POSK.Infrastructore.Core
+		SccProjectUniqueName2 = Geeky.POSK.Models\\Geeky.POSK.Models.csproj
+		SccProjectTopLevelParentUniqueName2 = Geeky.POSK.sln
+		SccProjectName2 = Geeky.POSK.Models
+		SccLocalPath2 = Geeky.POSK.Models
+		SccProjectUniqueName3 = Geeky.POSK.ORM.Mapping\\Geeky.POSK.ORM.Mapping.csproj
+		SccProjectTopLevelParentUniqueName3 = Geeky.POSK.sln
+		SccProjectName3 = Geeky.POSK.ORM.Mapping
+		SccLocalPath3 = Geeky.POSK.ORM.Mapping
+		SccProjectUniqueName4 = Geeky.POSK.ORM.Context.EF\\Geeky.POSK.ORM.Context.EF.csproj
+		SccProjectTopLevelParentUniqueName4 = Geeky.POSK.sln
+		SccProjectName4 = Geeky.POSK.ORM.Context.EF
+		SccLocalPath4 = Geeky.POSK.ORM.Context.EF
+		SccProjectUniqueName5 = POSK.ClientApp\\POSK.ClientApp.csproj
+		SccProjectTopLevelParentUniqueName5 = Geeky.POSK.sln
+		SccProjectName5 = POSK.ClientApp
+		SccLocalPath5 = POSK.ClientApp
+		SccProjectUniqueName6 = Geeky.POSK.ServerTesting\\Geeky.POSK.ServerTesting.csproj
+		SccProjectTopLevelParentUniqueName6 = Geeky.POSK.sln
+		SccProjectName6 = Geeky.POSK.ServerTesting
+		SccLocalPath6 = Geeky.POSK.ServerTesting
+		SccProjectUniqueName7 = Geeky.POSK.ClientTesting\\Geeky.POSK.ClientTesting.csproj
+		SccProjectTopLevelParentUniqueName7 = Geeky.POSK.sln
+		SccProjectName7 = Geeky.POSK.ClientTesting
+		SccLocalPath7 = Geeky.POSK.ClientTesting
+		SccProjectUniqueName8 = Geeky.POSK.DataContracts\\Geeky.POSK.DataContracts.csproj
+		SccProjectTopLevelParentUniqueName8 = Geeky.POSK.sln
+		SccProjectName8 = Geeky.POSK.DataContracts
+		SccLocalPath8 = Geeky.POSK.DataContracts
+		SccProjectUniqueName9 = Geeky.POSK.ServiceContracts\\Geeky.POSK.ServiceContracts.csproj
+		SccProjectTopLevelParentUniqueName9 = Geeky.POSK.sln
+		SccProjectName9 = Geeky.POSK.ServiceContracts
+		SccLocalPath9 = Geeky.POSK.ServiceContracts
+		SccProjectUniqueName10 = Geeky.POSK.ORM.Context.Core\\Geeky.POSK.ORM.Context.Core.csproj
+		SccProjectTopLevelParentUniqueName10 = Geeky.POSK.sln
+		SccProjectName10 = Geeky.POSK.ORM.Context.Core
+		SccLocalPath10 = Geeky.POSK.ORM.Context.Core
+		SccProjectUniqueName11 = UnitTesting\\UnitTesting.csproj
+		SccProjectTopLevelParentUniqueName11 = Geeky.POSK.sln
+		SccProjectName11 = UnitTesting
+		SccLocalPath11 = UnitTesting
+		SccProjectUniqueName12 = Geeky.POSK.Hosts.ConsoleHost\\Geeky.POSK.Hosts.ConsoleHost.csproj
+		SccProjectTopLevelParentUniqueName12 = Geeky.POSK.sln
+		SccProjectName12 = Geeky.POSK.Hosts.ConsoleHost
+		SccLocalPath12 = Geeky.POSK.Hosts.ConsoleHost
+		SccProjectUniqueName13 = Geeky.POSK.Hosts.WinSvc\\Geeky.POSK.Hosts.WinSvc.csproj
+		SccProjectTopLevelParentUniqueName13 = Geeky.POSK.sln
+		SccProjectName13 = Geeky.POSK.Hosts.WinSvc
+		SccLocalPath13 = Geeky.POSK.Hosts.WinSvc
+		SccProjectUniqueName14 = Geeky.POSK.Server.Dashboard\\Geeky.POSK.Server.Dashboard.csproj
+		SccProjectTopLevelParentUniqueName14 = Geeky.POSK.sln
+		SccProjectName14 = Geeky.POSK.Server.Dashboard
+		SccLocalPath14 = Geeky.POSK.Server.Dashboard
+		SccProjectUniqueName15 = Geeky.POSK.Services\\Geeky.POSK.Services.csproj
+		SccProjectTopLevelParentUniqueName15 = Geeky.POSK.sln
+		SccProjectName15 = Geeky.POSK.Services
+		SccLocalPath15 = Geeky.POSK.Services
+		SccProjectUniqueName16 = Geeky.POSK.Client.Proxy\\Geeky.POSK.Client.Proxy.csproj
+		SccProjectTopLevelParentUniqueName16 = Geeky.POSK.sln
+		SccProjectName16 = Geeky.POSK.Client.Proxy
+		SccLocalPath16 = Geeky.POSK.Client.Proxy
+		SccProjectUniqueName17 = Geeky.POSK.Repository.Core\\Geeky.POSK.Repository.Core.csproj
+		SccProjectTopLevelParentUniqueName17 = Geeky.POSK.sln
+		SccProjectName17 = Geeky.POSK.Repository.Core
+		SccLocalPath17 = Geeky.POSK.Repository.Core
+		SccProjectUniqueName18 = Geeky.POSK.Repository\\Geeky.POSK.Repository.csproj
+		SccProjectTopLevelParentUniqueName18 = Geeky.POSK.sln
+		SccProjectName18 = Geeky.POSK.Repository
+		SccLocalPath18 = Geeky.POSK.Repository
+		SccProjectUniqueName19 = Geeky.POSK.Repository.Interfface\\Geeky.POSK.Repository.Interfface.csproj
+		SccProjectTopLevelParentUniqueName19 = Geeky.POSK.sln
+		SccProjectName19 = Geeky.POSK.Repository.Interfface
+		SccLocalPath19 = Geeky.POSK.Repository.Interfface
+		SccProjectUniqueName20 = POSK.Client.ApplicationService.Interface\\POSK.Client.ApplicationService.Interface.csproj
+		SccProjectTopLevelParentUniqueName20 = Geeky.POSK.sln
+		SccProjectName20 = POSK.Client.ApplicationService.Interface
+		SccLocalPath20 = POSK.Client.ApplicationService.Interface
+		SccProjectUniqueName21 = POSK.Client.ApplicationService\\POSK.Client.ApplicationService.csproj
+		SccProjectTopLevelParentUniqueName21 = Geeky.POSK.sln
+		SccProjectName21 = POSK.Client.ApplicationService
+		SccLocalPath21 = POSK.Client.ApplicationService
+		SccProjectUniqueName22 = POSK.Client.ViewModels\\POSK.Client.ViewModels.csproj
+		SccProjectTopLevelParentUniqueName22 = Geeky.POSK.sln
+		SccProjectName22 = POSK.Client.ViewModels
+		SccLocalPath22 = POSK.Client.ViewModels
+		SccProjectUniqueName23 = Geeky.POSK.Server.ViewModels\\Geeky.POSK.Server.ViewModels.csproj
+		SccProjectTopLevelParentUniqueName23 = Geeky.POSK.sln
+		SccProjectName23 = Geeky.POSK.Server.ViewModels
+		SccLocalPath23 = Geeky.POSK.Server.ViewModels
+		SccProjectUniqueName24 = Geeky.POSK.WPF.Core\\Geeky.POSK.WPF.Core.csproj
+		SccProjectTopLevelParentUniqueName24 = Geeky.POSK.sln
+		SccProjectName24 = Geeky.POSK.WPF.Core
+		SccLocalPath24 = Geeky.POSK.WPF.Core
+		SccProjectUniqueName25 = POSK.Client.CashCode\\POSK.Client.CashCode.csproj
+		SccProjectTopLevelParentUniqueName25 = Geeky.POSK.sln
+		SccProjectName25 = POSK.Client.CashCode
+		SccLocalPath25 = POSK.Client.CashCode
+		SccProjectUniqueName26 = POSK.Client.CashCode.Interface\\POSK.Client.CashCode.Interface.csproj
+		SccProjectTopLevelParentUniqueName26 = Geeky.POSK.sln
+		SccProjectName26 = POSK.Client.CashCode.Interface
+		SccLocalPath26 = POSK.Client.CashCode.Interface
+		SccProjectUniqueName27 = POSK.Payment.Interface\\POSK.Payment.Interface.csproj
+		SccProjectTopLevelParentUniqueName27 = Geeky.POSK.sln
+		SccProjectName27 = POSK.Payment.Interface
+		SccLocalPath27 = POSK.Payment.Interface
+		SccProjectUniqueName28 = POSK.Client.CRT.Interface\\POSK.Client.CRT.Interface.csproj
+		SccProjectTopLevelParentUniqueName28 = Geeky.POSK.sln
+		SccProjectName28 = POSK.Client.CRT.Interface
+		SccLocalPath28 = POSK.Client.CRT.Interface
+		SccProjectUniqueName29 = POSK.Client.CRT\\POSK.Client.CRT.csproj
+		SccProjectTopLevelParentUniqueName29 = Geeky.POSK.sln
+		SccProjectName29 = POSK.Client.CRT
+		SccLocalPath29 = POSK.Client.CRT
+		SccProjectUniqueName30 = POSK.Printers\\POSK.Printers.csproj
+		SccProjectTopLevelParentUniqueName30 = Geeky.POSK.sln
+		SccProjectName30 = POSK.Printers
+		SccLocalPath30 = POSK.Printers
+		SccProjectUniqueName31 = ConsoleApp1\\ConsoleApp1.csproj
+		SccProjectTopLevelParentUniqueName31 = Geeky.POSK.sln
+		SccProjectName31 = ConsoleApp1
+		SccLocalPath31 = ConsoleApp1
+		SccProjectUniqueName32 = POSK.Printers.Interface\\POSK.Printers.Interface.csproj
+		SccProjectTopLevelParentUniqueName32 = Geeky.POSK.sln
+		SccProjectName32 = POSK.Printers.Interface
+		SccLocalPath32 = POSK.Printers.Interface
+		SccProjectUniqueName33 = Madaa.Lib.Win.Services\\Madaa.Lib.Win.Services.csproj
+		SccProjectTopLevelParentUniqueName33 = Geeky.POSK.sln
+		SccProjectName33 = Madaa.Lib.Win.Services
+		SccLocalPath33 = Madaa.Lib.Win.Services
+		SccProjectUniqueName34 = LicTool\\LicTool.csproj
+		SccProjectTopLevelParentUniqueName34 = Geeky.POSK.sln
+		SccProjectName34 = LicTool
+		SccLocalPath34 = LicTool
+	EndGlobalSection
+EndGlobal

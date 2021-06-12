@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F73AEDA-3D84-4A6B-87C5-94325440A4CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POSK.ClientApp</RootNamespace>
+    <AssemblyName>POSK.ClientApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Style\kiosk.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator, Version=5.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Autofac.Extras.CommonServiceLocator.5.0.0\lib\net45\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\AutoMapper.6.2.0\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\CommonServiceLocator.2.0.1\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Composition, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Composition.5.0.0\lib\NET45\Microsoft.Practices.Prism.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Interactivity.5.0.0\lib\NET45\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.PubSubEvents.1.0.0\lib\portable-sl4+wp7+windows8+net40\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.SharedInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\NLog.4.4.13\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFLocalizeExtension, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\WPFLocalizeExtension.3.0.1\lib\net35\WPFLocalizeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="XAMLMarkupExtensions, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\XAMLMarkupExtensions.1.2.2\lib\net40\XAMLMarkupExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppStartup.cs" />
+    <Compile Include="Converters\ArrayToStringLocalized.cs" />
+    <Compile Include="Debug.xaml.cs">
+      <DependentUpon>Debug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IoC\ClientDependancies.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SetupTerminal.xaml.cs">
+      <DependentUpon>SetupTerminal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectPaymentMethodView.xaml.cs">
+      <DependentUpon>SelectPaymentMethodView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductTypeView.xaml.cs">
+      <DependentUpon>ProductTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TerminalDisabledView.xaml.cs">
+      <DependentUpon>TerminalDisabledView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OnePaymentMethodWarningView.xaml.cs">
+      <DependentUpon>OnePaymentMethodWarningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeoutWarningView.xaml.cs">
+      <DependentUpon>TimeoutWarningView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SessionExpiredView.xaml.cs">
+      <DependentUpon>SessionExpiredView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FinishOrderView.xaml.cs">
+      <DependentUpon>FinishOrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductListView.xaml.cs">
+      <DependentUpon>ProductListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OrderPaymentView.xaml.cs">
+      <DependentUpon>OrderPaymentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShoppingCartView.xaml.cs">
+      <DependentUpon>ShoppingCartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceView.xaml.cs">
+      <DependentUpon>ServiceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductView.xaml.cs">
+      <DependentUpon>ProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectLanguageView.xaml.cs">
+      <DependentUpon>SelectLanguageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadingView.xaml.cs">
+      <DependentUpon>LoadingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceListView.xaml.cs">
+      <DependentUpon>ServiceListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FaildTrxView.xaml.cs">
+      <DependentUpon>FaildTrxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckoutView.xaml.cs">
+      <DependentUpon>CheckoutView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThankYouView.xaml.cs">
+      <DependentUpon>ThankYouView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Debug.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SetupTerminal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectPaymentMethodView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductTypeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TerminalDisabledView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OnePaymentMethodWarningView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TimeoutWarningView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SessionExpiredView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FinishOrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OrderPaymentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShoppingCartView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ServiceView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectLanguageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoadingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServiceListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FaildTrxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CheckoutView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ThankYouView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Style\yes.png" />
+    <Resource Include="Style\dAtm.png" />
+    <Resource Include="Style\dCash.png" />
+    <Resource Include="Style\pAtm.png" />
+    <Resource Include="Style\pCash.png" />
+    <Resource Include="Style\return.png" />
+    <Resource Include="Style\exit.png" />
+    <Resource Include="Style\continueIcon.png" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Geeky.POSK.Client.Proxy\Geeky.POSK.Client.Proxy.csproj">
+      <Project>{948E8139-327C-457C-B264-269EB3DE927C}</Project>
+      <Name>Geeky.POSK.Client.Proxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.DataContracts\Geeky.POSK.DataContracts.csproj">
+      <Project>{C51F52C6-2949-4222-A38B-AEE46E3CA4F2}</Project>
+      <Name>Geeky.POSK.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Infrastructore.Core\Geeky.POSK.Infrastructore.Core.csproj">
+      <Project>{CB1493F9-7E57-461B-8544-D31896D259F1}</Project>
+      <Name>Geeky.POSK.Infrastructore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Models\Geeky.POSK.Models.csproj">
+      <Project>{E1C9CE9D-8A73-47ED-AA8A-8807C16CE928}</Project>
+      <Name>Geeky.POSK.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.ORM.Context.Core\Geeky.POSK.ORM.Context.Core.csproj">
+      <Project>{0352932D-BAE5-40AD-A285-A9B1C52EA03A}</Project>
+      <Name>Geeky.POSK.ORM.Context.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.ORM.Context.EF\Geeky.POSK.ORM.Context.EF.csproj">
+      <Project>{EBFCA7B5-12A6-43C4-A311-646E9472AD9B}</Project>
+      <Name>Geeky.POSK.ORM.Context.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Repository.Core\Geeky.POSK.Repository.Core.csproj">
+      <Project>{66E0BB17-BDF9-446A-91D2-E40B8D08A40C}</Project>
+      <Name>Geeky.POSK.Repository.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Repository.Interfface\Geeky.POSK.Repository.Interfface.csproj">
+      <Project>{6D22DC35-7CB4-4FC0-AE87-11F9DB107F70}</Project>
+      <Name>Geeky.POSK.Repository.Interfface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Repository\Geeky.POSK.Repository.csproj">
+      <Project>{38D81923-C6A0-4E19-A2E2-A7E1DE8F8519}</Project>
+      <Name>Geeky.POSK.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.ServiceContracts\Geeky.POSK.ServiceContracts.csproj">
+      <Project>{1521B021-727D-4B54-8A3A-8176AAB0323D}</Project>
+      <Name>Geeky.POSK.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.WPF.Core\Geeky.POSK.WPF.Core.csproj">
+      <Project>{f83ff00e-7abd-4d8e-9496-264de4a26af5}</Project>
+      <Name>Geeky.POSK.WPF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Madaa.Lib.Win.Services\Madaa.Lib.Win.Services.csproj">
+      <Project>{CBAA3A56-3772-4120-874D-C13F182D49F0}</Project>
+      <Name>Madaa.Lib.Win.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Client.ApplicationService.Interface\POSK.Client.ApplicationService.Interface.csproj">
+      <Project>{F0A21F41-1299-4C15-BEA4-5F05C146FF25}</Project>
+      <Name>POSK.Client.ApplicationService.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Client.ApplicationService\POSK.Client.ApplicationService.csproj">
+      <Project>{6A2DCD31-5B3D-439C-8F71-C14F69211BE0}</Project>
+      <Name>POSK.Client.ApplicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Client.CashCode.Interface\POSK.Client.CashCode.Interface.csproj">
+      <Project>{5f183437-a3e6-4520-8e81-f3eb05936001}</Project>
+      <Name>POSK.Client.CashCode.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Client.CashCode\POSK.Client.CashCode.csproj">
+      <Project>{07332d53-bdb4-4fcc-b4e6-d4e460b482f6}</Project>
+      <Name>POSK.Client.CashCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Client.CRT.Interface\POSK.Client.CRT.Interface.csproj">
+      <Project>{906ADEDE-5F7F-4D43-929A-7EE7654DFA1B}</Project>
+      <Name>POSK.Client.CRT.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Client.ViewModels\POSK.Client.ViewModels.csproj">
+      <Project>{A704ED8E-C8AE-4378-A90F-71B12E3936FE}</Project>
+      <Name>POSK.Client.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Payment.Interface\POSK.Payment.Interface.csproj">
+      <Project>{FC5B2D8E-F27D-4A3A-8ED2-95876D8046E7}</Project>
+      <Name>POSK.Payment.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Printers.Interface\POSK.Printers.Interface.csproj">
+      <Project>{869C204C-F7BB-4F2C-ABDD-365E84B539B4}</Project>
+      <Name>POSK.Printers.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POSK.Printers\POSK.Printers.csproj">
+      <Project>{2DB6870E-3A9F-4212-8F2D-46143476A876}</Project>
+      <Name>POSK.Printers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="terminal.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\button_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\selectLangBorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resource.ar-SA.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\lang_ar.png" />
+    <Resource Include="Style\lang_en.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\cartIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\back01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\back02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\checkOut.png" />
+    <Resource Include="Style\checkOutPress.png" />
+    <Resource Include="Style\continue.png" />
+    <Resource Include="Style\continuePress.png" />
+    <Resource Include="Style\remove.png" />
+    <Resource Include="Style\removePress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\cartRow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\print.png" />
+    <Resource Include="Style\printPress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Style\kiosk.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

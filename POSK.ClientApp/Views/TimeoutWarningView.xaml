@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="POSK.ClientApp.Views.TimeoutWarningView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:POSK.ClientApp.Views"
+             xmlns:r="clr-namespace:POSK.ClientApp.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             xmlns:lex="http://wpflocalizeextension.codeplex.com">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button 
+            Grid.Column="0"
+            Margin="5,5,5,5"
+            VerticalAlignment="Top" 
+            Style="{StaticResource ProductButton}"
+            Command="{Binding ExtendTimeout}" 
+            Height="133" Width="175">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="14*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{lex:Loc EXTEND_SESSION}"  FontSize="28"  Grid.Column="2" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Image Source="/Style/continueIcon.png" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Grid>
+        </Button>
+        <Button 
+            Grid.Column="1"
+            Margin="5,5,5,5"
+            VerticalAlignment="Top" 
+            Style="{StaticResource ProductButton}"
+            Command="{Binding FinishOrder}"
+            Height="133" Width="175">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="14*"/>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="{lex:Loc FINISH_NOW}"  FontSize="28"  Grid.Column="2" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Image Source="/Style/exit.png" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            </Grid>
+        </Button>
+    </Grid>
+</UserControl>

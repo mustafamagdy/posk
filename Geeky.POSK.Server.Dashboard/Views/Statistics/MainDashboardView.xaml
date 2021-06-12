@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Geeky.POSK.Server.Dashboard.Views.MainDashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:local="clr-namespace:Geeky.POSK.Server.Dashboard.Views"
+             xmlns:conv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             xmlns:vm="clr-namespace:Geeky.POSK.Server.ViewModels;assembly=Geeky.POSK.Server.ViewModels"
+             xmlns:views ="clr-namespace:Geeky.POSK.Server.Dashboard.Views" 
+             xmlns:dto="clr-namespace:Geeky.POSK.DataContracts;assembly=Geeky.POSK.DataContracts" 
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="800">
+  <UserControl.Resources>
+    <conv:BoolToBrushConverter x:Key="CColor" TrueValue="LightGreen" FalseValue="OrangeRed" />
+    <DataTemplate DataType="{x:Type vm:ChartViewModel}">
+      <views:ChartView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:SalesReportViewModel}">
+      <views:SalesReportView/>
+    </DataTemplate>
+  </UserControl.Resources>
+
+  <Grid Height="600"  Width="800">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="70"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <TextBlock Text="SERVER DASHBOARD" HorizontalAlignment="Center" FontSize="20" Grid.Row="0"/>
+    <TabControl Grid.Row="1">
+      <TabItem x:Name="tbSalesByVendor" Header="By Vendor">
+        <ContentControl Content="{Binding SalesByVendorVm}" x:Name="salesByVendorCtrl"/>
+      </TabItem>
+      <TabItem Header="By Terminal" >
+        <ContentControl Content="{Binding SalesByTerminalVm}" x:Name="salesByTerminalCtrl"/>
+      </TabItem>
+      <TabItem Header="By Product" >
+        <ContentControl Content="{Binding SalesByProductVm}" x:Name="salesByProductCtrl"/>
+      </TabItem>
+      <TabItem Header="Sales Report">
+        <ContentControl Content="{Binding SalesReportVm}" x:Name="salesReportCtrl"/>
+      </TabItem>
+      <TabItem Header="Terminal Status" >
+        <ListView ItemsSource="{Binding TerminalPingStatus}" 
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                 BorderThickness="0" FontSize="14">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding TerminalKey}" Width="200"/>
+                <Ellipse Fill="{Binding Path=PingStatus, Converter={StaticResource CColor}}" Height="20" Width="20" StrokeThickness="0" Stroke="Black"/>
+                <TextBlock Text="{Binding LastError}" Width="AUTO"/>
+              </StackPanel>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </TabItem>
+    </TabControl>
+  </Grid>
+</UserControl>

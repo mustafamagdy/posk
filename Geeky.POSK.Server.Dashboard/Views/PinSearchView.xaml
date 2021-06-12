@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Geeky.POSK.Server.Dashboard.Views.PinSearchView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Geeky.POSK.Server.Dashboard.Views"
+             xmlns:dto="clr-namespace:Geeky.POSK.DataContracts;assembly=Geeky.POSK.DataContracts" 
+             xmlns:conv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             xmlns:vm="clr-namespace:Geeky.POSK.Server.ViewModels;assembly=Geeky.POSK.Server.ViewModels"
+             xmlns:local_conv="clr-namespace:Geeky.POSK.Server.Dashboard.Converters"
+             mc:Ignorable="d" d:DesignHeight="700" d:DesignWidth="800">
+    <UserControl.Resources>
+        <conv:BoolToVisibilityConverter x:Key="visibility" TrueValue="Visible" FalseValue="Collapsed"/>
+        <conv:BoolToStringConverter x:Key="CBool" TrueValue="Yes" FalseValue="No"/>
+        <local_conv:BoolToBoolStatusConverter x:Key="cStatusToBool"/>
+    </UserControl.Resources>
+    <Grid HorizontalAlignment="Stretch" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="30*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <Label Content="Search for PIN" FontSize="24" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="0"/>
+
+        <Label Content="Terminal: " Grid.Column="0" Grid.Row="1"></Label>
+        <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Terminals}" DisplayMemberPath="Code"  
+                SelectedValue="{Binding Filter.Terminal}"   />
+        <Label Content="Sold: " Grid.Column="2" Grid.Row="1"></Label>
+        <ComboBox Grid.Column="3"  Grid.Row="1" ItemsSource="{Binding BoolStatus}" 
+                  SelectedValue="{Binding Filter.Sold, Converter={StaticResource ResourceKey=cStatusToBool}}"/>
+        <Label Content="Expiry From: " Grid.Column="0" Grid.Row="3"/>
+        <DatePicker SelectedDate="{Binding Filter.ExpiryDateFrom}" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"/>
+        <Label Content="To: " Grid.Column="2" Grid.Row="3"/>
+        <DatePicker SelectedDate="{Binding Filter.ExpiryDateTo}" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center"/>
+        <Button Command="{Binding ResetExpiryDate}" Content="Reset" Grid.Column="4" Grid.Row="3" Padding="1"/>
+        <Label Content="Sold From: " Grid.Column="0" Grid.Row="4"/>
+        <DatePicker SelectedDate="{Binding Filter.SoldDateFrom}" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center"/>
+        <Label Content="To: " Grid.Column="2" Grid.Row="4"/>
+        <DatePicker SelectedDate="{Binding Filter.SoldDateTo}" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center"/>
+        <Button Command="{Binding ResetSoldDate}" Content="Reset" Grid.Column="4" Grid.Row="4" Padding="1"/>
+        <Label Content="Pin:" Grid.Column="0" Grid.Row="5"/>
+        <TextBox Text="{Binding Filter.Pin}" Grid.Column="1" Grid.Row="5"/>
+        <Label Content="Serial Number:" Grid.Column="2" Grid.Row="5"/>
+        <TextBox Text="{Binding Filter.SerialNumber}" Grid.Column="3" Grid.Row="5"/>
+        <Label Content="Ref Number:" Grid.Column="0" Grid.Row="6"/>
+        <TextBox Text="{Binding Filter.RefNumber}" Grid.Column="1" Grid.Row="6"/>
+        <Button Content="Search" Command="{Binding SearchForPin}" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="8" />
+        <GroupBox Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="5" Visibility="{Binding Path=!ResultFound, Converter={StaticResource visibility}}">
+            <TextBlock Text="NO DATA FOUND" />
+        </GroupBox>
+        <DataGrid ItemsSource="{Binding Pins}" IsReadOnly="True"  AutoGenerateColumns="False" 
+                      Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="5" 
+                  Visibility="{Binding Path=ResultFound, Converter={StaticResource visibility}}"
+                CanUserAddRows="False" 
+                ScrollViewer.CanContentScroll="True" 
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Pin}" Header="PIN"/>
+                <DataGridTextColumn Binding="{Binding SerialNumber}" Header="Serial Number"/>
+                <DataGridTextColumn Binding="{Binding RefNumber}" Header="Ref Number"/>
+                <DataGridTextColumn Binding="{Binding ExpiryDate, StringFormat=\{0:dd/MM/yyyy\}}" Header="Expiry Date"/>
+                <DataGridTextColumn Binding="{Binding Sold, Converter={StaticResource ResourceKey=CBool}}" Header="Sold"/>
+                <DataGridTextColumn Binding="{Binding SoldDate, StringFormat=\{0:dd/MM/yyyy HH:mm:ss\}}" Header="Sold Date"/>
+                <DataGridTextColumn Binding="{Binding VendorCode}" Header="Vendor Name"/>
+                <DataGridTextColumn Binding="{Binding ProductCode}" Header="Product"/>
+                <DataGridTextColumn Binding="{Binding TerminalCode}" Header="Terminal"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

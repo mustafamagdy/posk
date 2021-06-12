@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="Geeky.POSK.Server.Dashboard.Views.PinTransferView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Geeky.POSK.Server.Dashboard.Views"
+             xmlns:dto="clr-namespace:Geeky.POSK.DataContracts;assembly=Geeky.POSK.DataContracts" 
+             xmlns:conv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="800">
+  <UserControl.Resources>
+    <conv:BoolToVisibilityConverter x:Key="visibility" TrueValue="Visible" FalseValue="Collapsed"/>
+  </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Transfer Pins between terminals" FontSize="24" HorizontalAlignment="Left"/>
+        <Separator Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Vendor:" Grid.Column="0" Grid.Row="0"/>
+            <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Vendors}" DisplayMemberPath="Code" SelectedValue="{Binding SelectedVendor}" />
+            <Label Content="Product:" Grid.Column="0" Grid.Row="1"/>
+            <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Products}" DisplayMemberPath="Code" SelectedValue="{Binding SelectedProduct}" />
+        </Grid>
+        <Separator Grid.Row="3"/>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Transfrer from:" Grid.Column="0" Grid.Row="0"/>
+            <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding Terminals}" DisplayMemberPath="Code" 
+                SelectedItem="{Binding FromTerminal}" />
+            <Label Content="{Binding AvailabelCount}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"/>
+        </Grid>
+        <Separator Grid.Row="5"/>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Transfer Count:" Grid.Column="0" Grid.Row="0"></Label>
+            <TextBox Text="{Binding TransferCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"/>
+            <Label Content="Transfrer To:" Grid.Column="0" Grid.Row="1"></Label>
+            <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Terminals}" DisplayMemberPath="Code" SelectedItem="{Binding ToTerminal}"   />
+        </Grid>
+        <Separator Grid.Row="7"/>
+        <!--<Button Content="Transfer" IsEnabled="{Binding CanTransfer}" Grid.Row="8" Command="{Binding TransferSelectedPins}"/>-->
+    </Grid>
+  
+</UserControl>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\lib\NUnit3TestAdapter.3.8.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\..\lib\NUnit3TestAdapter.3.8.0\build\net35\NUnit3TestAdapter.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4CF20B79-8687-4370-ABCC-157B0D9019D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnitTesting</RootNamespace>
+    <AssemblyName>UnitTesting</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator, Version=5.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Autofac.Extras.CommonServiceLocator.5.0.0\lib\net45\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\CommonServiceLocator.2.0.1\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseUnitTest.cs" />
+    <Compile Include="BulkInsertProducts.cs" />
+    <Compile Include="DataAccessTests.cs" />
+    <Compile Include="EncryptionTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UOWTests.cs" />
+    <Compile Include="ValidData.cs" />
+    <Compile Include="WcfConnectionTesting.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Geeky.POSK.Client.Proxy\Geeky.POSK.Client.Proxy.csproj">
+      <Project>{948e8139-327c-457c-b264-269eb3de927c}</Project>
+      <Name>Geeky.POSK.Client.Proxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.DataContracts\Geeky.POSK.DataContracts.csproj">
+      <Project>{c51f52c6-2949-4222-a38b-aee46e3ca4f2}</Project>
+      <Name>Geeky.POSK.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Infrastructore.Core\Geeky.POSK.Infrastructore.Core.csproj">
+      <Project>{cb1493f9-7e57-461b-8544-d31896d259f1}</Project>
+      <Name>Geeky.POSK.Infrastructore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Models\Geeky.POSK.Models.csproj">
+      <Project>{e1c9ce9d-8a73-47ed-aa8a-8807c16ce928}</Project>
+      <Name>Geeky.POSK.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.ORM.Context.Core\Geeky.POSK.ORM.Context.Core.csproj">
+      <Project>{0352932D-BAE5-40AD-A285-A9B1C52EA03A}</Project>
+      <Name>Geeky.POSK.ORM.Context.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.ORM.Context.EF\Geeky.POSK.ORM.Context.EF.csproj">
+      <Project>{ebfca7b5-12a6-43c4-a311-646e9472ad9b}</Project>
+      <Name>Geeky.POSK.ORM.Context.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.ORM.Mapping\Geeky.POSK.ORM.Mapping.csproj">
+      <Project>{4c977a7d-1ad3-4c4b-817a-fe511c6414aa}</Project>
+      <Name>Geeky.POSK.ORM.Mapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Repository.Core\Geeky.POSK.Repository.Core.csproj">
+      <Project>{66E0BB17-BDF9-446A-91D2-E40B8D08A40C}</Project>
+      <Name>Geeky.POSK.Repository.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Repository.Interfface\Geeky.POSK.Repository.Interfface.csproj">
+      <Project>{6D22DC35-7CB4-4FC0-AE87-11F9DB107F70}</Project>
+      <Name>Geeky.POSK.Repository.Interfface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Repository\Geeky.POSK.Repository.csproj">
+      <Project>{38D81923-C6A0-4E19-A2E2-A7E1DE8F8519}</Project>
+      <Name>Geeky.POSK.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.ServiceContracts\Geeky.POSK.ServiceContracts.csproj">
+      <Project>{1521b021-727d-4b54-8a3a-8176aab0323d}</Project>
+      <Name>Geeky.POSK.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Geeky.POSK.Services\Geeky.POSK.Services.csproj">
+      <Project>{1366FCC1-DAB0-4926-914A-298DA35EFFFD}</Project>
+      <Name>Geeky.POSK.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stc_printed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zain_printed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\virgin_printed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jawwy_printed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\psn_printed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mobily_printed.png" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\lib\NUnit3TestAdapter.3.8.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\lib\NUnit3TestAdapter.3.8.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+</Project>

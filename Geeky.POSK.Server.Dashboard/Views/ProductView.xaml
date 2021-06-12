@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Geeky.POSK.Server.Dashboard.Views.ProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Geeky.POSK.Server.Dashboard.Views"
+             xmlns:dto="clr-namespace:Geeky.POSK.DataContracts;assembly=Geeky.POSK.DataContracts" 
+             xmlns:local_conv="clr-namespace:Geeky.POSK.Server.Dashboard.Converters"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300" MinWidth="350">
+  <UserControl.Resources>
+    <local_conv:ProductTypeToStringConverter x:Key="cProductTypeToString" Voice="Voice" Data="Data"/>
+  </UserControl.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="30*"/>
+      <ColumnDefinition Width="70*"/>
+    </Grid.ColumnDefinitions>
+    <Label Grid.Row="0" Grid.Column="0" Content="Code:"/>
+    <TextBox Text="{Binding Dto.Code, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Grid.Column="1"/>
+    <Label Grid.Row="1" Margin="3" Grid.Column="0" Content="Name 1:"/>
+    <TextBox Text="{Binding Dto.Language1Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Grid.Column="1"/>
+    <Label Grid.Row="2" Grid.Column="0" Content="Name 2:"/>
+    <TextBox Text="{Binding Dto.Language2Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Grid.Column="1"/>
+    <Label Grid.Row="3" Grid.Column="0" Content="Name 3:"/>
+    <TextBox Text="{Binding Dto.Language3Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Grid.Column="1"/>
+    <Label Grid.Row="4" Grid.Column="0" Content="Name 4:"/>
+    <TextBox Text="{Binding Dto.Language4Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Grid.Column="1"/>
+    <Label Grid.Row="5" Grid.Column="0" Content="Price:"/>
+    <TextBox Text="{Binding Dto.Price, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Grid.Column="1"/>
+    <Label Grid.Row="6" Grid.Column="0" Content="Price + Tax:"/>
+    <TextBox Text="{Binding Dto.PriceAfterTax, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Grid.Column="1"/>
+    <Label Grid.Row="7" Grid.Column="0" Content="Product Type:"/>
+    <ComboBox Grid.Column="1"  Grid.Row="7" ItemsSource="{Binding ProductTypes}" 
+                  SelectedValue="{Binding Dto.ProductType, Converter={StaticResource ResourceKey=cProductTypeToString}}"/>
+    <Label Grid.Row="8" Grid.Column="0" Content="Is Active:"/>
+    <CheckBox IsChecked="{Binding Dto.IsActive, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="8" Grid.Column="1"/>
+    <Label Grid.Row="9" Grid.Column="0" Content="Vendor:"/>
+    <ComboBox ItemsSource="{Binding Vendors}" DisplayMemberPath="Code" SelectedValuePath="Id" 
+                SelectedValue="{Binding Dto.VendorId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="9" Grid.Column="1"/>
+  </Grid>
+</UserControl>

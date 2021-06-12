@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="POSK.ClientApp.Views.ServiceListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:views="clr-namespace:POSK.ClientApp.Views"
+             xmlns:conv="clr-namespace:Geeky.POSK.WPF.Core;assembly=Geeky.POSK.WPF.Core"
+             xmlns:vm="clr-namespace:POSK.Client.ViewModels;assembly=POSK.Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+  <UserControl.Resources>
+    <conv:BoolToVisibilityConverter x:Key="CVisible" FalseValue="Collapsed" TrueValue="Visible" />
+    <DataTemplate DataType="{x:Type vm:ServiceViewModel}">
+      <views:ServiceView/>
+    </DataTemplate>
+    <!--<DataTemplate DataType="{x:Type vm:CheckoutViewModel}">
+      <views:CheckoutView/>
+    </DataTemplate>-->
+  </UserControl.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30*"/>
+      <RowDefinition Height="60*"/>
+      <RowDefinition Height="10*"/>
+    </Grid.RowDefinitions>
+    <ItemsControl Grid.Row="1" ItemsSource="{Binding Services}" HorizontalAlignment="Center" 
+                  VerticalAlignment="Center" HorizontalContentAlignment="Center">
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+          <!--<WrapPanel Orientation="Horizontal" />-->
+          <UniformGrid Columns="4" />
+        </ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <views:ServiceView DataContext="{Binding}"/>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <!--<ContentControl Grid.Row="2" Content="{Binding CheckoutVm}" Visibility="{Binding Path=CheckoutVm.HasItems, Converter={StaticResource CVisible}}" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>-->
+  </Grid>
+</UserControl>

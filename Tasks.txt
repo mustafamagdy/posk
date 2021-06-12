@@ -1,0 +1,37 @@
+Server
+----------------
+Transactions
+Faults (soap faults)
+Dashboard
+Upload excel file
+
+
+
+Client
+----------------
+Offline mode
+UI Componenet and placement
+RTL
+Excption Handling
+Cash Validator SDK
+Printer SDK
+Setup
+
+
+
+Business
+--------------
+Import products in server - DONE
+Send product list to terminal (assign them to terminal, and terminal get them localy) - DONE
+Redeem products from terminal to the server (either for transfer to another one or to store them on server)
+
+
+
+
+Propblems
+------------------
+- ioc init (percall, persession, single) and where (host, client, proxy ) ?? - DONE
+- bulkinsert has issues (name of propery cannot be determined for relation) - DONE (workaround)
+- uow - 
+- complexity of dbcontext structure - DONE
+- ioc in testing, how to init it to create context - DONE
